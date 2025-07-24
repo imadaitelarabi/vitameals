@@ -3,9 +3,10 @@
 import { useAuth } from '@/contexts/AuthContext'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
+import DashboardLayout from '@/components/dashboard/DashboardLayout'
 
 export default function DashboardPage() {
-  const { user, loading, signOut } = useAuth()
+  const { user, loading } = useAuth()
   const router = useRouter()
 
   useEffect(() => {
@@ -29,64 +30,44 @@ export default function DashboardPage() {
     return null
   }
 
-  const handleSignOut = async () => {
-    await signOut()
-    router.push('/')
-  }
-
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-primary">Vitameals Dashboard</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-muted-foreground">Welcome, {user.user_metadata?.display_name || user.email}</span>
-            <button
-              onClick={handleSignOut}
-              className="bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg font-medium transition-colors"
-            >
-              Sign Out
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="container mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-foreground mb-4">
-            Welcome to Your Dashboard
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Manage your children&apos;s school meals, view upcoming orders, and track nutrition.
+    <DashboardLayout>
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-foreground mb-2">
+            Welcome back, {user.user_metadata?.display_name || 'Partner'}!
+          </h1>
+          <p className="text-muted-foreground">
+            Your restaurant partner dashboard for managing school meal programs.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-card text-card-foreground p-6 rounded-lg border border-border">
-            <h3 className="text-lg font-semibold mb-2">Upcoming Meals</h3>
-            <p className="text-muted-foreground">View and manage scheduled meals for this week.</p>
-            <button className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors">
-              View Meals
-            </button>
+        <div className="bg-card text-card-foreground p-12 rounded-lg border border-border text-center">
+          <div className="mb-6">
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-semibold text-foreground mb-2">Restaurant Partner Dashboard Coming Soon</h2>
+            <p className="text-muted-foreground max-w-md mx-auto">
+              We&apos;re building a comprehensive dashboard for restaurant partners. This will be your central hub for managing school meal programs and growing your business.
+            </p>
           </div>
-
-          <div className="bg-card text-card-foreground p-6 rounded-lg border border-border">
-            <h3 className="text-lg font-semibold mb-2">Order History</h3>
-            <p className="text-muted-foreground">Check your previous meal orders and receipts.</p>
-            <button className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors">
-              View History
-            </button>
-          </div>
-
-          <div className="bg-card text-card-foreground p-6 rounded-lg border border-border">
-            <h3 className="text-lg font-semibold mb-2">Nutrition Tracking</h3>
-            <p className="text-muted-foreground">Monitor nutritional intake and dietary preferences.</p>
-            <button className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors">
-              View Nutrition
-            </button>
+          
+          <div className="bg-accent/50 rounded-lg p-6 max-w-lg mx-auto">
+            <h3 className="font-semibold text-foreground mb-2">Coming Soon:</h3>
+            <ul className="text-sm text-muted-foreground space-y-1 text-left">
+              <li>• Real-time order notifications and management</li>
+              <li>• Revenue tracking and business analytics</li>
+              <li>• Menu item performance insights</li>
+              <li>• School partnership management</li>
+              <li>• Automated invoicing and payments</li>
+              <li>• Customer feedback and ratings</li>
+            </ul>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </DashboardLayout>
   )
 }

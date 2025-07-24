@@ -32,26 +32,29 @@ export default function Home() {
         <section className="flex items-center justify-center min-h-screen px-6 py-12">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl sm:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Welcome to{" "}
+              Partner with{" "}
               <span className="text-primary">Vitameals</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-              Easily schedule and manage healthy meals for your children during school hours. 
-              Making nutrition simple for busy parents.
+              Join our platform to provide healthy, nutritious meals to schools and families. 
+              Expand your restaurant&apos;s reach and impact.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
-                href="/auth/login"
+                href="/auth/register"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-lg font-semibold text-lg transition-colors inline-block"
               >
-                Get Started
+                Become a Partner
               </Link>
               
-              <button className="border border-border text-foreground hover:bg-accent px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
-                Learn More
-              </button>
+              <Link 
+                href="/auth/login"
+                className="border border-border text-foreground hover:bg-accent px-8 py-3 rounded-lg font-semibold text-lg transition-colors inline-block"
+              >
+                Partner Login
+              </Link>
             </div>
           </div>
         </section>

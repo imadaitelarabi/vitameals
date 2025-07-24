@@ -52,8 +52,8 @@ export default function RegisterPage() {
       <div className="min-h-screen bg-background flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-md text-center">
           <div className="bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-lg">
-            <h2 className="text-xl font-semibold mb-2">Registration Successful!</h2>
-            <p>Please check your email for a confirmation link. Redirecting to login...</p>
+            <h2 className="text-xl font-semibold mb-2">Application Submitted!</h2>
+            <p>Thank you for applying to become a Vitameals partner. Please check your email for confirmation. Redirecting to login...</p>
           </div>
         </div>
       </div>
@@ -65,10 +65,10 @@ export default function RegisterPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-foreground mb-2">
-            Join <span className="text-primary">Vitameals</span>
+            Become a <span className="text-primary">Vitameals</span> Partner
           </h1>
           <p className="text-muted-foreground">
-            Create your account to get started
+            Apply to join our restaurant partner network
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function RegisterPage() {
 
           <div>
             <label htmlFor="displayName" className="block text-sm font-medium text-foreground mb-2">
-              Display Name
+              Restaurant Name
             </label>
             <input
               id="displayName"
@@ -90,13 +90,13 @@ export default function RegisterPage() {
               onChange={(e) => setDisplayName(e.target.value)}
               required
               className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
-              placeholder="Enter your display name"
+              placeholder="Enter your restaurant name"
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-              Email address
+              Business Email
             </label>
             <input
               id="email"
@@ -105,7 +105,7 @@ export default function RegisterPage() {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="w-full px-3 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-background text-foreground"
-              placeholder="Enter your email"
+              placeholder="Enter your business email"
             />
           </div>
 
@@ -144,13 +144,13 @@ export default function RegisterPage() {
             disabled={loading}
             className="w-full bg-primary text-primary-foreground hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-lg font-semibold transition-colors"
           >
-            {loading ? 'Creating account...' : 'Create Account'}
+            {loading ? 'Submitting application...' : 'Apply Now'}
           </button>
         </form>
 
         <div className="mt-6 text-center">
           <p className="text-muted-foreground">
-            Already have an account?{' '}
+            Already a partner?{' '}
             <Link href="/auth/login" className="text-primary hover:underline font-semibold">
               Sign in
             </Link>

@@ -40,7 +40,7 @@ export default function LoginPage() {
             Welcome back to <span className="text-primary">Vitameals</span>
           </h1>
           <p className="text-muted-foreground">
-            Sign in to your account to continue
+            Sign in to your restaurant partner account
           </p>
         </div>
 
@@ -92,9 +92,9 @@ export default function LoginPage() {
 
         <div className="mt-6 text-center">
           <p className="text-muted-foreground">
-            Don&apos;t have an account?{' '}
+            New restaurant partner?{' '}
             <Link href="/auth/register" className="text-primary hover:underline font-semibold">
-              Sign up
+              Apply to join
             </Link>
           </p>
         </div>
