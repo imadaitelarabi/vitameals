@@ -1,0 +1,14 @@
+.vscode
+dev.log
+*.log
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+mobile/.env
+mobile/.env.local
+web/.env.local
+web/.env.production.local
